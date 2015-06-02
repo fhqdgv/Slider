@@ -27,10 +27,10 @@
  *     navCurrentClass: {String}    切换导航(0,1,2,3,4..)选中类名，默认为switch_nav_item_current
  *     mixClass:        {String}    切换图片项类名，默认为item，用于图片滚动切换中，未实现真正图片无缝滚动，利用mixClass组合凑整以幻灯形式切换
 **/
-end
 ```
 ## 快速开始
 ### 使用requireJS
+```javascript
 <script src="lib/require.js"></script>
 <script>
 require.config({
@@ -43,10 +43,12 @@ require(['jquery', 'switchable'], function($, switchable){
 	switchable({$element: $('#slides')});
 });
 </script>
+```
 ### 不使用requireJS
+```javascript
 <script src="lib/jquery.js"></script>
 <script src="lib/switchable.js"></script>
 <script>
 switchable({$element: $('#slides')});
 </script>
-
+```
