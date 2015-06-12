@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>switchable</title>
+<link rel="stylesheet" href="imgs/style.css" />
+<style>
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="g_slide" id="slides">
+	<div class="switch_main">
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/1.jpg" width="698" height="235" alt="春节活动" /></a>
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/2.jpg" width="698" height="235" alt="春节活动" /></a>
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/3.jpg" width="698" height="235" alt="春节活动" /></a>
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/4.jpg" width="698" height="235" alt="春节活动" /></a>
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/5.jpg" width="698" height="235" alt="春节活动" /></a>
+	</div>
+</div>
+
+<div class="g_slide" id="slides1">
+	<div class="switch_main">
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/1.jpg" width="698" height="235" alt="春节活动" /></a>
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/3.jpg" width="698" height="235" alt="春节活动" /></a>
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/4.jpg" width="698" height="235" alt="春节活动" /></a>
+		<a class="item switch_item" href="#" target="_blank"><img data-src="imgs/5.jpg" width="698" height="235" alt="春节活动" /></a>
+	</div>
+</div>
+
+<div class="scroll" id="scroll_wrap">
+	<div class="scroll_in switch_main">
+		<a class="item" href="#" target="_blank"><img data-src="imgs/1.jpg" width="250" height="117" alt="春节活动" /></a>
+		<a class="item" href="#" target="_blank"><img data-src="imgs/2.jpg" width="250" height="117" alt="春节活动" /></a>
+		<a class="item" href="#" target="_blank"><img data-src="imgs/3.jpg" width="250" height="117" alt="春节活动" /></a>
+		<a class="item" href="#" target="_blank"><img data-src="imgs/4.jpg" width="250" height="117" alt="春节活动" /></a>
+		<a class="item" href="#" target="_blank"><img data-src="imgs/5.jpg" width="250" height="117" alt="春节活动" /></a>
+	</div>
+</div>
+
+
+<script src="../lib/require.js"></script> 
+<script>
+require.config({
+	paths: {
+		'jquery': '../lib/jquery'
+		,'switchable': '../lib/switchable'
+	}
+});
+
+require(['jquery', 'switchable'], function($, switchable){
+	switchable({
+		$element: $('#slides')
+		,interval: 2000
+		,animateSpeed: 500
+		
+	});
+	switchable({
+		$element: $('#slides1')
+		,interval: 2000
+		,effect: 'fade'
+	});
+	switchable({
+		$element: $('#scroll_wrap')
+		,interval: 2000
+		,showNav: true
+		//,effect: 'fade'
+		,type: 'imgScroll'
+		,imgScroll: {
+			num: 2
+		}
+	});
+});
+</script>
+</body>
+</html>
